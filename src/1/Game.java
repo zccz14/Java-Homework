@@ -29,7 +29,8 @@ public class Game{
 				cnt[k]++;
 			}
 		for(int i=0;i<4;i++)
-			if(cnt[i]+cnt[i+4] >= 3) return true;
+			if(cnt[i]+cnt[i+4] >= 3) 
+				return true;
 		return false;
 	}
 	private static int drop(int playerIndex,int col,char[][] board){
@@ -58,7 +59,7 @@ public class Game{
 		char[][] board= newGame(6,7);
 		printBoard(board);
 		//Round round !
-		for(int round=0;;round++){
+		for(int round=0;round<6*7;round++){
 			System.out.print("Drop a "+player[round%2]+" disk at column (0-"+(board[0].length-1)+"): ");
 			while(true){
 				int col=in.nextInt();
@@ -77,5 +78,6 @@ public class Game{
 				else System.out.println("Illegal Drop! Please redrop.");
 			}
 		}
+		System.out.println("Tie!");
 	}
 }
